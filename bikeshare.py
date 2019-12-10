@@ -133,6 +133,8 @@ def trip_duration_stats(df):
     # TO DO: display mean travel time
     print(df['Trip Duration'].mean())
 
+    print(df['Trip Duration'].describe())
+
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
