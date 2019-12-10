@@ -111,6 +111,10 @@ def station_stats(df):
     popular_station = df['Combination Station'].mode()[0]
     print("The most common station:\n{} \n".format(popular_station))
 
+    df['less Combination Station'] = df['End Station'] - df['Start Station']
+    less_station = df['less Combination Station'].mode()[0]
+    print("The less common station:\n{} \n".format(less_station))
+
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
