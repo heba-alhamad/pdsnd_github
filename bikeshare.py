@@ -25,7 +25,7 @@ def get_filters():
     Month = input('choose a month or all: ').strip().title()
     while(not Month in ('All', 'January', 'February','March','April','May','June','July','August','September','October','November','December')):
         Month = input('choose a month or all: ').strip().title()
-
+# we can use number instead of month name
     # TO DO: get user input for day of week (all, monday, tuesday, ... sunday)
     Day = input('choose a day: ').strip().title()
     while(not Day in ('All','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday')):
