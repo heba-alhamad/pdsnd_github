@@ -152,6 +152,7 @@ def user_stats(df):
     print(df['Birth Year'].min())
     print(df['Birth Year'].max())
     print(df['Birth Year'].mode()[0])
+    print(df['Birth Year'].unique())
 
 
     print("\nThis took %s seconds." % (time.time() - start_time))
