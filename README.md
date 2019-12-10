@@ -14,4 +14,5 @@ bikeshare.py in the first step of these project
 the tutorials in "www.atlassian.com" are simple and clear, I make a good use of them to through these project
 
 # note
-finished step one 
+finished step one
+finished step two
