@@ -28,8 +28,8 @@ def get_filters():
 # we can use number instead of month name
     # TO DO: get user input for day of week (all, monday, tuesday, ... sunday)
     Day = input('choose a day: ').strip().title()
-    while(not Day in ('All','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday')):
-        Day = input('choose a day: ').strip().title()
+    while(not Day in ('All','Mon','Tue','Wed','Thu','Fri','Sat','Sun')):
+        Day = input('choose a day "short name": ').strip().title()
 
 
     print('-'*40)
