@@ -49,6 +49,8 @@ def load_data(city, month, day):
     """
     df = pd.read_csv(CITY_DATA[city.lower()])
 
+    print(df.columns)
+
     df['Start Time'] = pd.to_datetime(df['Start Time'])
     df['End Time'] = pd.to_datetime(df['End Time'])
 
