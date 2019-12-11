@@ -16,7 +16,7 @@ def get_filters():
         (str) day - name of the day of week to filter by, or "all" to apply no day filter
     """
     print('Hello! Let\'s explore some US bikeshare data!')
-
+print("Hello these is heba project")
     City = input('choose a city: ').strip().title()
     while(not City in ('Chicago', 'New York City','Washington')):
         City = input('choose a city: ').strip().title()
@@ -25,11 +25,11 @@ def get_filters():
     Month = input('choose a month or all: ').strip().title()
     while(not Month in ('All', 'January', 'February','March','April','May','June','July','August','September','October','November','December')):
         Month = input('choose a month or all: ').strip().title()
-
+# we can use number instead of month name
     # TO DO: get user input for day of week (all, monday, tuesday, ... sunday)
     Day = input('choose a day: ').strip().title()
-    while(not Day in ('All','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday')):
-        Day = input('choose a day: ').strip().title()
+    while(not Day in ('All','Mon','Tue','Wed','Thu','Fri','Sat','Sun')):
+        Day = input('choose a day "short name": ').strip().title()
 
 
     print('-'*40)
@@ -48,6 +48,8 @@ def load_data(city, month, day):
         df - Pandas DataFrame containing city data filtered by month and day
     """
     df = pd.read_csv(CITY_DATA[city.lower()])
+
+    print(df.columns)
 
     df['Start Time'] = pd.to_datetime(df['Start Time'])
     df['End Time'] = pd.to_datetime(df['End Time'])
@@ -109,6 +111,10 @@ def station_stats(df):
     popular_station = df['Combination Station'].mode()[0]
     print("The most common station:\n{} \n".format(popular_station))
 
+    df['less Combination Station'] = df['End Station'] - df['Start Station']
+    less_station = df['less Combination Station'].mode()[0]
+    print("The less common station:\n{} \n".format(less_station))
+
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
@@ -126,6 +132,8 @@ def trip_duration_stats(df):
 
     # TO DO: display mean travel time
     print(df['Trip Duration'].mean())
+
+    print(df['Trip Duration'].describe())
 
 
     print("\nThis took %s seconds." % (time.time() - start_time))
@@ -150,6 +158,7 @@ def user_stats(df):
     print(df['Birth Year'].min())
     print(df['Birth Year'].max())
     print(df['Birth Year'].mode()[0])
+    print(df['Birth Year'].unique())
 
 
     print("\nThis took %s seconds." % (time.time() - start_time))
