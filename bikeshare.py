@@ -16,11 +16,7 @@ def get_filters():
         (str) day - name of the day of week to filter by, or "all" to apply no day filter
     """
     print('Hello! Let\'s explore some US bikeshare data!')
-<<<<<<< HEAD
-print("Hello these is heba project")
-=======
-
->>>>>>> 1aaf100... Add the bikeshare.py file
+    print("Hello these is heba project")
     City = input('choose a city: ').strip().title()
     while(not City in ('Chicago', 'New York City','Washington')):
         City = input('choose a city: ').strip().title()
@@ -29,19 +25,11 @@ print("Hello these is heba project")
     Month = input('choose a month or all: ').strip().title()
     while(not Month in ('All', 'January', 'February','March','April','May','June','July','August','September','October','November','December')):
         Month = input('choose a month or all: ').strip().title()
-<<<<<<< HEAD
 # we can use number instead of month name
     # TO DO: get user input for day of week (all, monday, tuesday, ... sunday)
     Day = input('choose a day: ').strip().title()
     while(not Day in ('All','Mon','Tue','Wed','Thu','Fri','Sat','Sun')):
         Day = input('choose a day "short name": ').strip().title()
-=======
-
-    # TO DO: get user input for day of week (all, monday, tuesday, ... sunday)
-    Day = input('choose a day: ').strip().title()
-    while(not Day in ('All','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday')):
-        Day = input('choose a day: ').strip().title()
->>>>>>> 1aaf100... Add the bikeshare.py file
 
 
     print('-'*40)
@@ -61,11 +49,8 @@ def load_data(city, month, day):
     """
     df = pd.read_csv(CITY_DATA[city.lower()])
 
-<<<<<<< HEAD
     print(df.columns)
 
-=======
->>>>>>> 1aaf100... Add the bikeshare.py file
     df['Start Time'] = pd.to_datetime(df['Start Time'])
     df['End Time'] = pd.to_datetime(df['End Time'])
 
@@ -126,13 +111,10 @@ def station_stats(df):
     popular_station = df['Combination Station'].mode()[0]
     print("The most common station:\n{} \n".format(popular_station))
 
-<<<<<<< HEAD
     df['less Combination Station'] = df['End Station'] - df['Start Station']
     less_station = df['less Combination Station'].mode()[0]
     print("The less common station:\n{} \n".format(less_station))
 
-=======
->>>>>>> 1aaf100... Add the bikeshare.py file
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
@@ -151,11 +133,8 @@ def trip_duration_stats(df):
     # TO DO: display mean travel time
     print(df['Trip Duration'].mean())
 
-<<<<<<< HEAD
     print(df['Trip Duration'].describe())
 
-=======
->>>>>>> 1aaf100... Add the bikeshare.py file
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
@@ -179,10 +158,8 @@ def user_stats(df):
     print(df['Birth Year'].min())
     print(df['Birth Year'].max())
     print(df['Birth Year'].mode()[0])
-<<<<<<< HEAD
     print(df['Birth Year'].unique())
-=======
->>>>>>> 1aaf100... Add the bikeshare.py file
+
 
 
     print("\nThis took %s seconds." % (time.time() - start_time))
