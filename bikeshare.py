@@ -161,6 +161,8 @@ def user_stats(df):
     print(df['Birth Year'].unique())
 
 
+    print(df['Birth Year'].unique())
+
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
